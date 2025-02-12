@@ -54,6 +54,13 @@ public static class TranslationHelper
                     { "openai-api-key", Configuration.OpenAiApiKey }
                 });
                 break;
+            case TranslationEngine.XiaoNiu:
+                millisecondsDelay = 1000;
+                nv.Add(new NameValueCollection
+                {
+                    { "xiaoniu-api-key", Configuration.XiaoNiuApiKey }
+                });
+                break;
             default:
                 throw new ArgumentException($"Invalid translation engine: {Configuration.TranslationEngine}");
         }
