@@ -185,6 +185,21 @@ public class PluginConfiguration : BasePluginConfiguration
     [VisibleCondition(nameof(TranslationEngine), ValueCondition.IsEqual, TranslationEngine.XiaoNiu)]
 #endif
     public string XiaoNiuApiKey { get; set; } = string.Empty;
+#if __EMBY__
+    [DisplayName("Tencent secret id")]
+    [VisibleCondition(nameof(TranslationEngine), ValueCondition.IsEqual, TranslationEngine.Tencent)]
+#endif
+    public string TencentSecretId { get; set; } = string.Empty;
+#if __EMBY__
+    [DisplayName("Tencent secret key")]
+    [VisibleCondition(nameof(TranslationEngine), ValueCondition.IsEqual, TranslationEngine.Tencent)]
+#endif
+    public string TencentSecretKey { get; set; } = string.Empty;
+#if __EMBY__
+    [DisplayName("Tencent project id")]
+    [VisibleCondition(nameof(TranslationEngine), ValueCondition.IsEqual, TranslationEngine.Tencent)]
+#endif
+    public string TencentProjectId { get; set; } = string.Empty;
 
 #if __EMBY__
     [DisplayName("Enable title substitution")]

@@ -55,10 +55,19 @@ public static class TranslationHelper
                 });
                 break;
             case TranslationEngine.XiaoNiu:
-                millisecondsDelay = 1000;
+                millisecondsDelay = 300;
                 nv.Add(new NameValueCollection
                 {
                     { "xiaoniu-api-key", Configuration.XiaoNiuApiKey }
+                });
+                break;
+            case TranslationEngine.Tencent:
+                millisecondsDelay = 1000;
+                nv.Add(new NameValueCollection
+                {
+                    { "tencent-secret-id", Configuration.TencentSecretId },
+                    { "tencent-secret-key", Configuration.TencentSecretKey },
+                    { "tencent-project-id", Configuration.TencentProjectId }
                 });
                 break;
             default:
@@ -77,7 +86,7 @@ public static class TranslationHelper
                     .ConfigureAwait(false)).TranslatedText;
             }
 
-            return await RetryAsync(TranslateWithDelay, 5);
+            return await RetryAsync(TranslateWithDelay, 3);
         }
         finally
         {

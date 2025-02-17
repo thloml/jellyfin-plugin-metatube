@@ -20,5 +20,8 @@ public enum TranslationEngine
     OpenAi,
     
     [Description("XiaoNiu")]
-    XiaoNiu
+    XiaoNiu,
+    
+    [Description("Tencent")]
+    Tencent
 }
